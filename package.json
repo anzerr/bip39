@@ -1,0 +1,31 @@
+{
+	"name": "bip39",
+	"version": "1.0.0",
+	"description": "Mnemonic code for generating deterministic keys",
+	"main": "index.js",
+	"scripts": {
+		"test": "node test.js"
+	},
+	"keywords": [],
+	"author": "anzerr",
+	"license": "MIT",
+	"devDependencies": {
+		"eslint": "5.11.1",
+		"eslint-config-basic": "git+https://git@github.com/anzerr/eslintrc.git"
+	},
+	"eslintConfig": {
+		"extends": "eslint-config-basic"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:anzerr/bip39.git"
+	},
+	"engines": {
+		"node": ">= 0.10.0"
+	},
+	"types": "index.d.ts",
+	"bugs": {
+		"url": "https://github.com/anzerr/bip39/issues"
+	},
+	"homepage": "https://github.com/anzerr/bip39#readme"
+}
