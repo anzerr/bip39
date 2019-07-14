@@ -19,6 +19,6 @@ for (let i in lang) {
 }
 
 module.exports = {
-	ref: lang,
+	array: lang,
 	map: map
 };

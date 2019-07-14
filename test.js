@@ -12,3 +12,4 @@ assert.equal(bip.entropy.toMnemonic(account[1]).join(' '), account[0]);
 assert.equal(bip.mnemonic.toEntropy(account[0]), account[1]);
 assert.equal(bip.mnemonic.toEntropy(bip.entropy.toMnemonic(account[1]).join(' ')), account[1]);
 assert.equal(util.checksum(Buffer.from(account[1], 'hex')), '01011010');
+assert.equal(bip.wordlists.english.map[bip.wordlists.english.array[0]], 0);
