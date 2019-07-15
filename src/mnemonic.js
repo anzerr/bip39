@@ -1,5 +1,6 @@
 
-const wordlists = require('./wordlists.js'),
+const wordlists = require('./wordlists/index.js'),
+	Wordlist = require('./wordlists/wordlist.js'),
 	entropy = require('./entropy.js'),
 	util = require('./util.js');
 
@@ -10,14 +11,14 @@ class Mnemonic {
 	}
 
 	set default(d) {
-		if (typeof d !== 'object') {
+		if (Array.isArray(d) && d instanceof Wordlist) {
 			throw new Error('can\'t use that type for wordlist');
 		}
-		this._default = d;
+		this._default = (d instanceof Wordlist) ? d.map : d;
 	}
 
 	constructor() {
-		this._default = wordlists.map.english;
+		this._default = wordlists.english.map;
 	}
 
 	toEntropy(mnemonic = '', w) {
