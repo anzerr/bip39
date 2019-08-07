@@ -1,11 +1,23 @@
 
-const wordlists = require('./wordlists.js'),
+const wordlists = require('./wordlists/index.js'),
+	Wordlist = require('./wordlists/wordlist.js'),
 	util = require('./util.js');
 
 class Entropy {
 
+	get default() {
+		return this._default;
+	}
+
+	set default(d) {
+		if (Array.isArray(d) && d instanceof Wordlist) {
+			throw new Error('can\'t use that type for wordlist');
+		}
+		this._default = (d instanceof Wordlist) ? d.array : d;
+	}
+
 	constructor() {
-		this._default = wordlists.ref.english;
+		this._default = wordlists.english.array;
 	}
 
 	toMnemonic(e, w) {
@@ -22,7 +34,7 @@ class Entropy {
 			throw new Error(`entropy is not a buffer give a "${typeof entropy}"`);
 		}
 		if (entropy.length < 16 || entropy.length > 32 || entropy.length % 4 !== 0) {
-			throw new TypeError('Invalid entropy');
+			throw new TypeError('Invalid entropy bewteen 16 and 32');
 		}
 		return entropy;
 	}
