@@ -4,7 +4,8 @@
 
 #### `Install`
 ``` bash
-npm install --save git+https://git@github.com/anzerr/<?>.git
+npm install --save git+https://github.com/anzerr/bip39.git
+npm install --save @anzerr/bip39
 ```
 
 ### `Example`
