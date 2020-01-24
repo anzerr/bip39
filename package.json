@@ -1,6 +1,6 @@
 {
 	"name": "bip39",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "Mnemonic code for generating deterministic keys",
 	"keywords": [
 		"bitcoin",
